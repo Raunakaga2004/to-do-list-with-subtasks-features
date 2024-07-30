@@ -303,7 +303,10 @@ public class ToDoList {
     }
 
     // Filter completed and uncompleted tasks (returns new ToDoList)
-    public ToDoList categorizeTasksCompleted(Boolean check) { //categorize by completed(true) or uncompleted(false)
+    public void categorizeTasksCompleted(Boolean check){
+        categorizeTasksCompletedHelper(check).displayTasks();
+    }
+    public ToDoList categorizeTasksCompletedHelper(Boolean check) { //categorize by completed(true) or uncompleted(false)
         ToDoList catList = new ToDoList();
 
         Task node = this.headTask;
